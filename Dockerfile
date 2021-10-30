@@ -17,6 +17,9 @@ RUN steamcmd +login anonymous \
 # ---
 FROM debian:bullseye
 
+ARG GIT_REPO
+LABEL org.opencontainers.image.source=${GIT_REPO}
+
 # Add new non-root user
 RUN groupadd --gid 1000 server && \
   useradd --uid 1000 --gid server --shell /bin/bash --create-home server && \

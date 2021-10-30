@@ -27,7 +27,7 @@ RUN groupadd --gid 1000 server && \
   # Setup directories
   mkdir /satisfactory-dedicated /data && \
   chown server:server /satisfactory-dedicated && \
-  chown server:server /data && ls -lah /
+  chown server:server /data
 
 # Copy in server files and setup library path
 COPY --from=download --chown=server:server /satisfactory-dedicated /satisfactory-dedicated

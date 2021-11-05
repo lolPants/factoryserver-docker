@@ -23,9 +23,9 @@ LABEL org.opencontainers.image.source=${GIT_REPO}
 # Add new non-root user
 RUN groupadd --gid 1000 server && \
   useradd --uid 1000 --gid server --shell /bin/bash --create-home server && \
-  # Install root CA certificates
+  # Install dependencies
   apt-get update && \
-  apt-get install -y ca-certificates && \
+  apt-get install -y ca-certificates libsdl2-2.0-0 && \
   rm -rf /var/lib/apt/lists/* && \
   # Setup directories
   mkdir /satisfactory-dedicated /data && \

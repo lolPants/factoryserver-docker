@@ -9,8 +9,11 @@ FROM steam as download
 
 # Download server software
 WORKDIR /satisfactory-dedicated
+
+ARG SERVER_BRANCH
 RUN steamcmd +login anonymous \
   +force_install_dir /satisfactory-dedicated \
+  ${SERVER_BRANCH} \
   +app_update 1690800 \
   +quit
 

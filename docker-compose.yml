@@ -4,7 +4,7 @@ version: '3'
 
 services:
   server:
-    image: ghcr.io/lolpants/satisfactory-docker
+    image: ghcr.io/lolpants/satisfactory-dedicated:stable
     build: '.'
     ports:
       - 7777:7777/udp
